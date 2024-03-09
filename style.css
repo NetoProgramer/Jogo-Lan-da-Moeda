@@ -1,89 +1,101 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
-}
-
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: #e3f2fd;
-}
-
-.wrapper{
-    width: 65vmin;
-    height: 70vmin;
-    display: flex;
-    overflow: hidden;
-    flex-direction: column;
-    justify-content: center;
-    background: #3fbe04;
-    border-radius: 5px;
-    box-shadow: 0 20px 40px rgba(52, 87, 220, 0.2);
-}
-
-.game-details{
-    color: #b8c6dc;
-    font-weight: 500;
-    font-size: 1.2rem;
-    padding: 20px 27px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.play-board{
-    height: 100%;
-    width: 100%;
-    display: grid;
-    background: #212837;
-    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
-}
-
-.play-board .food{
-    background: #ff003d;
-}
-
-.play-board .head{
-    background: #60cbff;
-}
-
-.controls{
-    display: none;
-    justify-content: space-between;
-}
-
-.controls i{
-    padding: 25px 0;
+    background: ghostwhite;
+    color: dimgray;
+    font-family: serif;
     text-align: center;
-    font-size: 1.3rem;
-    color: #b8c6dc;
-    width: calc(100% / 4);
-    cursor: pointer;
-    border-right: 1px solid #171b26;
 }
 
-@media screen and (max-width: 800px) {
-    .wrapper{
-        width: 90vmin;
-        height: 115vmin;
+h1{
+    font-size: 2rem;
+}
+
+#container{
+    margin: 5% auto;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.box{
+    display: inline-block;
+    border: 1px solid gray;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+span{
+    position: absolute;
+    font-size: 75px;
+    font-family: sans-serif;
+    text-align: center;
+    height: 75px;
+    width: 75px;
+    padding: 0;
+    margin: 5px;
+    margin-left: -35px;
+}
+
+.top{
+    border-top: none;
+}
+
+.bottom{
+    border-bottom: none;
+}
+
+.left{
+    border-left: none;
+}
+
+.right{
+    border-right: none;
+}
+
+.alert{
+    height: 75px;
+    width: 125px;
+    display: inline-block;
+    background: ghostwhite;
+    position: relative;
+    z-index: 10;
+    margin-top: -50%;
+    border-radius: 20px;
+    box-shadow: 0 0 75px 2px dimgray;
+    animation: larger 0.5s;
+    animation-fill-mode: forwards;
+    box-sizing: content-box;
+    padding: 30px;
+    bottom: 50px;
+    top: 0;
+}
+
+button{
+    background: dimgray;
+    border-radius: 2px;
+    color: ghostwhite;
+    border: none;
+    outline: none;
+}
+
+button:focus{
+    background: silver;
+}
+
+.activeBox{
+    background: silver;
+}
+
+@keyframes larger{
+    from{
+        height: 75px;
+        width: 125px;
     }
 
-    .game-details{
-        font-size: 1rem;
-        padding: 15px 27px;
+    to{
+        height: 100px;
+        width: 250px;
     }
 
-    .controls{
-        display: flex;
-    }
-
-    .controls i{
-        padding: 15px 0;
-        font-size: 1rem;
-    }
 }
